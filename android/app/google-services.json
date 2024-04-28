@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "885584363406",
+    "firebase_url": "https://smarthome-f314e-default-rtdb.firebaseio.com",
+    "project_id": "smarthome-f314e",
+    "storage_bucket": "smarthome-f314e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:885584363406:android:00f2dd6f9a97316d4beedf",
+        "android_client_info": {
+          "package_name": "com.example.myp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9YXxrDRoaW3HxfsyzYIp5YtOfUnDFFGo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
