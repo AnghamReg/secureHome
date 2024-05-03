@@ -36,6 +36,15 @@ class GarbageView extends GetView<GarbageController> {
               }
 
               var userData = snapshot.data;
+              var garbagePercent=userData?["percentGarbage"];
+              if(garbagePercent>=100){
+                garbagePercent=100;
+              }else if(garbagePercent<0){
+                print("<0 !!! ");
+                garbagePercent=garbagePercent.abs();
+                print("garbage is : $garbagePercent");
+              }
+
               return Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -73,7 +82,7 @@ class GarbageView extends GetView<GarbageController> {
                         radius: 100.0,
                         lineWidth: 40.0,
                         animation: true,
-                        percent: userData?["percentGarbage"].toDouble() / 100,
+                        percent: (garbagePercent.toDouble() / 100).abs(),
                         center: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -81,10 +90,10 @@ class GarbageView extends GetView<GarbageController> {
                               Icons.delete,
                               size: 55,
                               color: controller.getProgressColor(
-                                  userData?["percentGarbage"].toDouble() / 100),
+                                  garbagePercent.toDouble() / 100),
                             ),
                             Text(
-                              "${(userData?["percentGarbage"]).toStringAsFixed(1)}%",
+                              "${garbagePercent.toStringAsFixed(1)}%",
                               style: size17FamilyPoppinsBoldColorBlack,
                             ),
                           ],
@@ -93,7 +102,7 @@ class GarbageView extends GetView<GarbageController> {
                             style: size17FamilyPoppinsBoldColorBlack),
                         circularStrokeCap: CircularStrokeCap.round,
                         progressColor: controller.getProgressColor(
-                            userData?["percentGarbage"].toDouble() / 100),
+                            garbagePercent.toDouble() / 100),
                       ),
                     ),
                   ),
